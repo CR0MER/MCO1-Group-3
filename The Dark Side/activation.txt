@@ -1,0 +1,3 @@
+This is how to compile the thing
+
+gcc main1.c graham_scan1.c stack.c sort.c -o main1 -lm

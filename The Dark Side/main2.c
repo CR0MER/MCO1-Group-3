@@ -5,8 +5,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include "point.h"
-
-void graham_scan2(Point *pts, int n, int *hull, int *hull_size);
+#include "graham_scan2.h"
 
 int main() {
     char in_file[256], out_file[256];

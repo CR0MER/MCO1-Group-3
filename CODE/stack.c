@@ -2,13 +2,7 @@
 #include <stdlib.h>
 #include "stack.h"
 
-#define MAX_STACK_SIZE 32768
-
-struct Stack
-{
-    int data[MAX_STACK_SIZE];
-    int top;
-};
+// Stack struct is defined in stack.h, no need to redefine here.
 
 Stack *CREATE()
 {

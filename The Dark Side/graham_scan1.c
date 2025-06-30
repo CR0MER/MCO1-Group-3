@@ -7,8 +7,7 @@
 #include "point.h"
 #include "stack.h"
 #include "sort.h"
-
-void graham_scan1(Point *pts, int n, int *hull, int *hull_size);
+#include "graham_scan1.h"
 
 // Helper: find anchor (lowest y, then x)
 static int find_anchor(Point *pts, int n) {
