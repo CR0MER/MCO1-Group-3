@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include "stack.h"
 
-// Stack struct is defined in stack.h, no need to redefine here.
 
 Stack *CREATE()
 {
