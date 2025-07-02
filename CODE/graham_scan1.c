@@ -1,5 +1,5 @@
-#include "stack.h"
-#include "sort.h"
+#include "stack.c"
+#include "sort.c"
 #include <math.h> // might need this
 
 // The Anchor is the point with the lowest y-coordinate, and in case of a tie, the point with the lowest x-coordinate.

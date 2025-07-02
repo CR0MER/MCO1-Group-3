@@ -1,4 +1,3 @@
-
 #include "coord.h"
 
 #define MAX_COORDS 32768
