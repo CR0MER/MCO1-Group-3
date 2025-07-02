@@ -24,20 +24,28 @@ double getDistance(Coord c1, Coord c2)
 int compareCoords(Coord anchor, Coord c1, Coord c2)
 {
     int dir = getDirection(anchor, c1, c2);
-    if (dir == 0)                                                 // if Collinear
-        return getDistance(anchor, c1) < getDistance(anchor, c2); // returns 1 if c1 is closer to anchor than c2
-
-    // if not Collinear
-    return dir == 2; // returns 1 if orientation is counter clockwise, else 0
+    if (dir == 0)
+    {
+        double d1 = getDistance(anchor, c1);
+        double d2 = getDistance(anchor, c2);
+        if (d1 < d2)
+            return -1;
+        if (d1 > d2)
+            return 1;
+        return 0;
+    }
+    if (dir == 2)
+        return -1; // counter-clockwise: c1 < c2
+    return 1;      // clockwise: c1 > c2
 }
 
 void bubbleSort(Coord *coords, int n, Coord anchor)
 {
     int i, j;
     Coord temp;
-    for (i = 0; i < n - 1; i++)
+    for (i = 1; i < n - 1; i++)
     {
-        for (j = 0; j < n - i - 1; j++)
+        for (j = 1; j < n - i; j++)
         {
             if (compareCoords(anchor, coords[j], coords[j + 1]) > 0) // if the coordinates are not collinear
             {
@@ -62,11 +70,11 @@ void quickSort(Coord *coords, int left, int right, Coord anchor)
     while (i <= j)
     {
         // Left Scanning
-        while (compareCoords(anchor, coords[i], pivot)) // while coords[i] is less than pivot
-            i++;                                        // move i to the right
+        while (compareCoords(anchor, coords[i], pivot) < 0) // while coords[i] is less than pivot
+            i++;                                            // move i to the right
         // Right Scanning
-        while (compareCoords(anchor, pivot, coords[j])) // while coords[j] is greater than pivot
-            j--;                                        // Move j to the left
+        while (compareCoords(anchor, coords[j], pivot) > 0) // while coords[j] is greater than pivot
+            j--;                                            // Move j to the left
         if (i <= j)
         {
             temp = coords[i];

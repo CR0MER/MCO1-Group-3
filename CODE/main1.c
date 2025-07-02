@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <time.h>
-#include "graham_scan1.c"
-
-// Main1.c does the Graham Scan algorithm using Bubble Sort
+#include "stack.h"
+#include "coord.h"
+#include "graham_scan1.h"
 
 int main()
 {
@@ -23,9 +23,9 @@ int main()
 
     if (input != NULL)
     {
-        if (fscanf(input, "%d", &n) == 1)
+        if (fscanf(input, "%d", &n) == 1) // Read the number of coordinates
             for (int i = 0; i < n; i++)
-                fscanf(input, "%lf %lf", &coords[n].x, &coords[n].y);
+                fscanf(input, "%lf %lf", &coords[i].x, &coords[i].y);
     }
     else
         fprintf(stdout, "Failed to read data from %s!", inputFile);
@@ -37,7 +37,18 @@ int main()
     graham1(coords, n, hull, &hullSize); // Call the Graham Scan function (you need to implement this function in graham_scan1.c)
     end = clock();
 
-    // TODO: Write the output to the output file
+    output = fopen(outputFile, "w");
+    if (output != NULL)
+    {
+        fprintf(output, "%d\n", hullSize);
+        for (int i = 0; i < hullSize; i++)
+            fprintf(output, "%.6lf %.6lf\n", hull[i].x, hull[i].y);
+        fclose(output);
+    }
+    else
+    {
+        fprintf(stdout, "Failed to write data to %s!\n", outputFile);
+    }
 
     return 0;
 }
