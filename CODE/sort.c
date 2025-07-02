@@ -5,7 +5,7 @@
 // Returns 2 if Counter Clockwise, 1 if Clockwise, and 0 if Collinear
 int getDirection(Coord c1, Coord c2, Coord c3)
 {
-    int value = (c2.x - c1.x) * (c3.y - c1.y) - (c2.y - c1.y) * (c3.x - c1.x);
+    double value = (c2.x - c1.x) * (c3.y - c1.y) - (c2.y - c1.y) * (c3.x - c1.x);
     if (value == 0.0)
         return 0; // Collinear
     if (value < 0.0)
@@ -13,12 +13,19 @@ int getDirection(Coord c1, Coord c2, Coord c3)
     return 2;     // Counter-clockwise
 }
 
+// Returns the distance between two coordinates (Used pythagorean theorem)
+double getDistance(Coord a, Coord b)
+{
+    double dx = a.x - b.x, dy = a.y - b.y;
+    return dx * dx + dy * dy; // no need to get the sqrt
+}
+
 // Compares two point coordinates based on their angle relative to the anchor
 int compareCoords(Coord anchor, Coord c1, Coord c2)
 {
     int dir = getDirection(anchor, c1, c2);
-    if (dir == 0)                                     // if Collinear
-        return dist2(anchor, c1) < dist2(anchor, c2); // returns 1 if c1 is closer to anchor than c2
+    if (dir == 0)                                                 // if Collinear
+        return getDistance(anchor, c1) < getDistance(anchor, c2); // returns 1 if c1 is closer to anchor than c2
 
     // if not Collinear
     return dir == 2; // returns 1 if orientation is counter clockwise, else 0
