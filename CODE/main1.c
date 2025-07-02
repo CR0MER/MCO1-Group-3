@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <time.h>
-#include "stack.h"
 #include "graham_scan1.c"
 
 // Main1.c does the Graham Scan algorithm using Bubble Sort
@@ -20,6 +19,16 @@ int main()
     scanf("%s", inputFile);
 
     // TODO: Open the input file and read the number of coordinates
+    input = fopen(inputFile, "r");
+
+    if (input != NULL)
+    {
+        if (fscanf(input, "%d", &n) == 1)
+            for (int i = 0; i < n; i++)
+                fscanf(input, "%lf %lf", &coords[n].x, &coords[n].y);
+    }
+    else
+        fprintf(stdout, "Failed to read data from %s!", inputFile);
 
     printf("Enter name of output file: ");
     scanf("%s", outputFile);
