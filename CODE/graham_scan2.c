@@ -17,14 +17,13 @@ int getAnchor(Coord *coords, int n)
     return index;
 }
 
-// TODO: Implement the graham scan algorithm using the stack and sort functions
 /*
 ** @param *coords: Array of coordinates
 ** @param n: Number of coordinates
 ** @param *hull: Array of coordinates in the convex hull
 ** @param *hullSize: Size of the hull
 */
-void graham1(Coord *coords, int n, Coord *hull, int *hullSize)
+void graham2(Coord *coords, int n, Coord *hull, int *hullSize)
 {
     // Get the lowest point
     int index = getAnchor(coords, n);
@@ -36,7 +35,7 @@ void graham1(Coord *coords, int n, Coord *hull, int *hullSize)
     Coord anchor = coords[0];
 
     // use the bubble sort algorithm
-    bubbleSort(coords, n, anchor);
+    quickSort(coords, 0, n - 1, anchor);
 
     // initialize the stack then push the first 3 points o
     Stack s;
