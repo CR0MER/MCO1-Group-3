@@ -18,7 +18,6 @@ int main()
     printf("Enter name of input file: ");
     scanf("%s", inputFile);
 
-    // TODO: Open the input file and read the number of coordinates
     input = fopen(inputFile, "r");
 
     if (input != NULL)
@@ -34,15 +33,16 @@ int main()
     scanf("%s", outputFile);
 
     start = clock();
-    graham2(coords, n, hull, &hullSize); // Call the Graham Scan function (you need to implement this function in graham_scan1.c)
+    graham2(coords, n, hull, &hullSize); // Call the Graham Scan function
     end = clock();
 
-    printf("Time Elapsed(in milliseconds): %.3lfms\n", (double)(end - start) * 1000.0 / CLOCKS_PER_SEC);
+    printf("Time Elapsed(in milliseconds): %.2lfms\n", (double)(end - start) * 1000.0 / CLOCKS_PER_SEC);
 
+    // output file
     output = fopen(outputFile, "w");
     if (output != NULL)
     {
-        fprintf(output, "%d\n", hullSize);
+        fprintf(output, "%d\n", hullSize); // print the hull size
         for (int i = 0; i < hullSize; i++)
             fprintf(output, "%.6lf %.6lf\n", hull[i].x, hull[i].y);
         fclose(output);

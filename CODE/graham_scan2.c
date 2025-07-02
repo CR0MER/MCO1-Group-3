@@ -8,6 +8,7 @@ int getAnchor(Coord *coords, int n)
     int index = 0;
     for (int i = 1; i < n; i++)
     {
+        // if the current point is lower than the current anchor, or they are the same y coordinate but x coordinate is lower
         if (coords[i].y < coords[index].y || (coords[i].y == coords[index].y && coords[i].x < coords[index].x))
         {
             index = i;
@@ -46,12 +47,14 @@ void graham2(Coord *coords, int n, Coord *hull, int *hullSize)
     // go through the rest of the coordinates
     for (int i = 3; i < n; i++)
     {
+        // While the last two points in the stack does not make a left turn
         while (s.top >= 1 && getDirection(NEXT_TO_TOP(&s), TOP(&s), coords[i]) != 2)
             POP(&s);
-        PUSH(&s, coords[i]);
+        PUSH(&s, coords[i]); // add curent coord to the stack
     }
-
+    // Set hull size to the number of points in the stack
     *hullSize = s.top + 1;
+    // pop all the points in the stack and then put them into the hull array
     for (int i = s.top; i >= 0; i--)
         hull[i] = POP(&s);
 }
