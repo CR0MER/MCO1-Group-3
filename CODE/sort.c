@@ -14,9 +14,9 @@ int getDirection(Coord c1, Coord c2, Coord c3)
 }
 
 // Returns the distance between two coordinates (Used pythagorean theorem)
-double getDistance(Coord a, Coord b)
+double getDistance(Coord c1, Coord c2)
 {
-    double dx = a.x - b.x, dy = a.y - b.y;
+    double dx = c1.x - c2.x, dy = c1.y - c2.y;
     return dx * dx + dy * dy; // no need to get the sqrt
 }
 
