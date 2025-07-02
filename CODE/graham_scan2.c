@@ -1,6 +1,5 @@
 #include "stack.h"
 #include "sort.h"
-#include <math.h> // might need this
 
 // The Anchor is the point with the lowest y-coordinate, and in case of a tie, the point with the lowest x-coordinate.
 // returns the index of the anchor in the array pts

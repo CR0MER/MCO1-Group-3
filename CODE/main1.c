@@ -42,9 +42,9 @@ int main()
     output = fopen(outputFile, "w");
     if (output != NULL)
     {
-        fprintf(output, "%d\n", hullSize);
+        fprintf(output, "%d\n", hullSize); // print out the hull size
         for (int i = 0; i < hullSize; i++)
-            fprintf(output, "%.6lf %.6lf\n", hull[i].x, hull[i].y);
+            fprintf(output, "%.6lf %.6lf\n", hull[i].x, hull[i].y); // print x and y coordinates of the hull point coordiantes
         fclose(output);
     }
     else
