@@ -37,6 +37,8 @@ int main()
     graham2(coords, n, hull, &hullSize); // Call the Graham Scan function (you need to implement this function in graham_scan1.c)
     end = clock();
 
+    printf("Time Elapsed(in milliseconds): %.3lfms\n", (double)(end - start) * 1000.0 / CLOCKS_PER_SEC);
+
     output = fopen(outputFile, "w");
     if (output != NULL)
     {

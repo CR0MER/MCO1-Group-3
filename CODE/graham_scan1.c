@@ -17,8 +17,7 @@ int getAnchor(Coord *coords, int n)
     return index;
 }
 
-// TODO: Implement the graham scan algorithm using the stack and sort functions
-/*
+/* Trying out javadocs in C
 ** @param *coords: Array of coordinates
 ** @param n: Number of coordinates
 ** @param *hull: Array of coordinates in the convex hull
@@ -38,7 +37,7 @@ void graham1(Coord *coords, int n, Coord *hull, int *hullSize)
     // use the bubble sort algorithm
     bubbleSort(coords, n, anchor);
 
-    // initialize the stack then push the first 3 points o
+    // initialize the stack then push the first 3 non collinear points
     Stack s;
     CREATE(&s);
     PUSH(&s, coords[0]);

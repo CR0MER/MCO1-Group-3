@@ -29,14 +29,14 @@ int compareCoords(Coord anchor, Coord c1, Coord c2)
         double d1 = getDistance(anchor, c1);
         double d2 = getDistance(anchor, c2);
         if (d1 < d2)
-            return -1;
+            return -1; // c1 is closer to the anchor
         if (d1 > d2)
-            return 1;
-        return 0;
+            return 1; // c2 is closer to the anchor
+        return 0;     // equal distance case
     }
     if (dir == 2)
-        return -1; // counter-clockwise: c1 < c2
-    return 1;      // clockwise: c1 > c2
+        return -1; // counter clockwise case
+    return 1;      // clockwise case
 }
 
 void bubbleSort(Coord *coords, int n, Coord anchor)
