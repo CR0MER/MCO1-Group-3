@@ -5,5 +5,4 @@
 
 int getAnchor(Coord *coords, int n);
 void graham1(Coord *coords, int n, Coord *hull, int *hullSize);
-
 #endif

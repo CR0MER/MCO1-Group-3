@@ -1,3 +1,8 @@
+/*
+ Programmer: Bien Aouien Miranda,  Keifer Sy
+ Tester: Darryl Mattthew Esguerra, Bien Aouien Miranda
+*/
+
 #include "stack.h"
 #include "sort.h"
 

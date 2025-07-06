@@ -1,3 +1,8 @@
+/*
+ Programmer: Bien Aouien Miranda, Darryl Matthew Esguerra
+ Tester: Darryl Mattthew Esguerra, Keifer Sy
+*/
+
 #include <stdio.h>
 #include <time.h>
 #include "stack.h"
@@ -18,7 +23,6 @@ int main()
     printf("Enter name of input file: ");
     scanf("%s", inputFile);
 
-    // TODO: Open the input file and read the number of coordinates
     input = fopen(inputFile, "r");
 
     if (input != NULL)

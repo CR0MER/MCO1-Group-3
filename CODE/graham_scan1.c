@@ -1,3 +1,8 @@
+/*
+ Programmer: Bien Aouien Miranda,  Keifer Sy
+ Tester: Darryl Mattthew Esguerra, Bien Aouien Miranda
+*/
+
 #include "stack.h"
 #include "sort.h"
 
@@ -17,7 +22,7 @@ int getAnchor(Coord *coords, int n)
     return index;
 }
 
-/* Trying out javadocs in C
+/*
 ** @param *coords: Array of coordinates
 ** @param n: Number of coordinates
 ** @param *hull: Array of coordinates in the convex hull

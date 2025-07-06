@@ -1,5 +1,8 @@
 {
   "files.associations": {
-    "coord.h": "c"
+    "coord.h": "c",
+    "stdio.h": "c",
+    "sort.h": "c",
+    "stack.h": "c"
   }
 }

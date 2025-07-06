@@ -1,3 +1,8 @@
+/*
+ Programmer: Bien Aouien Miranda, Darryl Matthew Esguerra
+ Tester: Darryl Mattthew Esguerra, Keifer Sy
+*/
+
 #include <stdio.h>
 #include <time.h>
 #include "stack.h"

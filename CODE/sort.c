@@ -1,3 +1,8 @@
+/*
+ Programmer: Bien Aouien Miranda, Darryl Matthew Esguerra, Keifer Sy
+ Tester: Darryl Mattthew Esguerra, Keifer Sy
+*/
+
 #include <stdio.h>
 #include "sort.h"
 
