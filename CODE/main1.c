@@ -1,6 +1,8 @@
 /*
  Programmer: Bien Aouien Miranda, Darryl Matthew Esguerra
  Tester: Darryl Mattthew Esguerra, Keifer Sy
+
+ First main file that uses the slow algorithm bubble sort.
 */
 
 #include <stdio.h>
@@ -30,9 +32,12 @@ int main()
         if (fscanf(input, "%d", &n) == 1) // Read the number of coordinates
             for (int i = 0; i < n; i++)
                 fscanf(input, "%lf %lf", &coords[i].x, &coords[i].y);
+        fclose(input);
     }
     else
-        fprintf(stdout, "Failed to read data from %s!", inputFile);
+    {
+        fprintf(stderr, "Failed to read data from %s!", inputFile);
+    }
 
     printf("Enter name of output file: ");
     scanf("%s", outputFile);
@@ -46,14 +51,14 @@ int main()
     output = fopen(outputFile, "w");
     if (output != NULL)
     {
-        fprintf(output, "%d\n", hullSize); // print out the hull size
+        fprintf(output, "%d\n", hullSize); // print out the hull size (m)
         for (int i = 0; i < hullSize; i++)
             fprintf(output, "%.6lf %.6lf\n", hull[i].x, hull[i].y); // print x and y coordinates of the hull point coordiantes
         fclose(output);
     }
     else
     {
-        fprintf(stdout, "Failed to write data to %s!\n", outputFile);
+        fprintf(stderr, "Failed to write data to %s!\n", outputFile);
     }
 
     return 0;

@@ -1,6 +1,8 @@
 /*
  Programmer: Bien Aouien Miranda, Darryl Matthew Esguerra, Keifer Sy
  Tester: Darryl Mattthew Esguerra, Keifer Sy
+
+ Contains the functions for creating and manipulating a stack.
 */
 
 #include <stdio.h>

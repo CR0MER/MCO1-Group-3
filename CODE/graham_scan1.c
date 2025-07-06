@@ -1,6 +1,8 @@
 /*
  Programmer: Bien Aouien Miranda,  Keifer Sy
  Tester: Darryl Mattthew Esguerra, Bien Aouien Miranda
+
+ Contains the Graham's Scan algorithm that uses the bubble sort algorithm.
 */
 
 #include "stack.h"

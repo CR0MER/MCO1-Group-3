@@ -1,6 +1,9 @@
 /*
  Programmer: Bien Aouien Miranda, Darryl Matthew Esguerra, Keifer Sy
  Tester: Darryl Mattthew Esguerra, Keifer Sy
+
+ Contains the bubble sort and quick sort algorithm which also does
+ the polar angle computation and comparisons.
 */
 
 #include <stdio.h>
